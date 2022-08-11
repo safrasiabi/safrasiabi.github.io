@@ -1,1 +1,31 @@
-"Hello World" 
+<script src="https://gatewayt.moneris.com/chkt/js/chkt_v1.00.js"></script>
+<div id="monerisCheckout">sd</div>
+<div id="outerDiv" style="width:400px"; height"300px"> <div id="monerisCheckout"></div></div>
+<script>
+    var myPageLoad;
+    var myCancelTransaction
+    var myErrorEvent
+    var myPaymentReceipt
+    var myPaymentComplete
+var myCheckout = new monerisCheckout();
+myCheckout.setMode("qa");
+myCheckout.setCheckoutDiv("monerisCheckout");
+var myCheckout = new monerisCheckout();
+myCheckout.setCallback("page_loaded", myPageLoad);
+myCheckout.setCallback("cancel_transaction", myCancelTransaction);
+myCheckout.setCallback("error_event", myErrorEvent);
+myCheckout.setCallback("payment_receipt", myPaymentReceipt);
+myCheckout.setCallback("payment_complete", myPaymentComplete);
+myCheckout.setCallback("page_closed",myPageClosed);
+myCheckout.startCheckout("1660227201xFsivvrYgcJC6X6Hhvy53hUBXQAZeT");
+function myPaymentComplete(){
+    alert("payment completed");
+}
+function myPageClosed(){
+    window.onbeforeunload="are you sure you want to exist?"
+}
+function myErrorEvent(){
+    alert("error happned");
+}
+</script>
+
