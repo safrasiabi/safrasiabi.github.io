@@ -17,9 +17,13 @@ myCheckout.setCallback("error_event", myErrorEvent);
 myCheckout.setCallback("payment_receipt", myPaymentReceipt);
 myCheckout.setCallback("payment_complete", myPaymentComplete);
 myCheckout.setCallback("page_closed",myPageClosed);
-myCheckout.startCheckout("1660227201xFsivvrYgcJC6X6Hhvy53hUBXQAZeT");
+myCheckout.startCheckout("1660227460M6ULcwG6PZDhlVJas9JMy1wL27kFUT");
 function myPaymentComplete(){
     alert("payment completed");
+}
+function myPaymentReceipt(res){
+    console.log(res);
+    alert(res);
 }
 function myPageClosed(){
     window.onbeforeunload="are you sure you want to exist?"
